@@ -1,0 +1,139 @@
+:root {
+  --shade: #0d2b4c;
+  --midtone: #40577e;
+  --alt-shade: #342d27;
+  --alt-mid: #e96d57;
+  --highlight: #e8dace;
+  --text: #f3f7f0;
+  --alt-text: #99dd51;
+  --alt-text-dark: #84bb48;
+  --wide-screen: 50rem;
+  --sidebar-width: 12rem;
+}
+
+a {
+  color: var(--alt-text);
+}
+
+.emph {
+  color: var(--alt-mid);
+}
+
+html {
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--shade);
+  color: var(--text);
+  height: 100%;
+}
+
+body {
+  width: min(var(--wide-screen), 95%);
+  background: var(--shade);
+  margin: auto;
+}
+
+main {
+  display: flex;
+}
+
+@media (min-width: calc(50rem + 1px)) {
+  main {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 50rem) {
+  main {
+    flex-direction: column;
+  }
+}
+
+section {
+  border: 1px solid var(--midtone);
+  padding: 1rem;
+}
+
+.sidebar {
+  margin: 0 1rem 2rem;
+  color: white;
+}
+
+@media (min-width: calc(50rem + 1px)) {
+  .sidebar {
+    width: var(--sidebar-width);
+    margin: 0;
+  }
+}
+
+.sidebar section {
+  padding: 0;
+}
+
+@media (max-width: 50rem) {
+  .sidebar section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+}
+
+.profile-pic-container {
+  max-width: 25rem;
+}
+
+@media (max-width: 50rem) {
+  .profile-pic-container {
+    margin: 0;
+    max-width: max(25%, 10rem);
+  }
+}
+
+.profile-pic {
+  padding: min(10%, 1rem);
+  margin: auto;
+  background-color: var(--alt-mid);
+  background: linear-gradient(180deg, var(--alt-mid) 0%, var(--alt-mid) 20%, var(--shade) 80%, var(--shade) 100%);
+}
+
+.profile-description {
+  margin: 0 1rem;
+}
+
+@media (max-width: 50rem) {
+  .profile-description {
+    width: 60%;
+  }
+}
+
+@media (max-width: 35rem) {
+  .profile-description {
+    width: 100%;
+  }
+}
+
+
+.profile-pic img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.mainbar {
+  margin: 0 1rem;
+
+  flex-grow: 1;
+}
+
+@media (min-width: calc(50rem + 1px)) {
+  .mainbar {
+    width: calc(var(--wide-screen) - var(--sidebar-width) - 5.5rem);
+  }
+}
+
+.mainbar section {
+  margin-bottom: 1rem;
+}
+
+.subject {
+  font-size: 1.5rem;
+}
