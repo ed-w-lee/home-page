@@ -33,19 +33,22 @@ body {
 }
 
 main {
-  display: flex;
+  display: grid;
 }
 
 @media (min-width: calc(50rem + 1px)) {
   main {
-    flex-wrap: wrap;
-    justify-content: space-between;
+    grid-template-columns: .8fr 2fr;
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 1rem;
+    row-gap: 1rem;
   }
 }
 
 @media (max-width: 50rem) {
   main {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    row-gap: 1rem;
   }
 }
 
@@ -54,24 +57,18 @@ section {
   padding: 1rem;
 }
 
-.sidebar {
-  margin: 0 1rem 2rem;
-  color: white;
+#about {
+  padding: 0;
 }
 
 @media (min-width: calc(50rem + 1px)) {
   .sidebar {
-    width: var(--sidebar-width);
-    margin: 0;
+    grid-row-start: span 3;
   }
 }
 
-.sidebar section {
-  padding: 0;
-}
-
 @media (max-width: 50rem) {
-  .sidebar section {
+  #about {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -112,26 +109,9 @@ section {
   }
 }
 
-
 .profile-pic img {
   max-width: 100%;
   max-height: 100%;
-}
-
-.mainbar {
-  margin: 0 1rem;
-
-  flex-grow: 1;
-}
-
-@media (min-width: calc(50rem + 1px)) {
-  .mainbar {
-    width: calc(var(--wide-screen) - var(--sidebar-width) - 5.5rem);
-  }
-}
-
-.mainbar section {
-  margin-bottom: 1rem;
 }
 
 .subject {
